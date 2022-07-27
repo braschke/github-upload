@@ -1,0 +1,18 @@
+SOURCE = \
+constraint.C \
+staticForceConstraint.C \
+addForceConstraint.C \
+agglomerationConstraint.C \
+orientedForceConstraint.C \
+fixedAxisForceConstraint.C \
+staticTorqueConstraint.C \
+orientedTorqueConstraint.C \
+staticVelocityConstraint.C \
+staticOmegaConstraint.C \
+fixedRotationAxisConstraint.C \
+skiJumpConstraint.C \
+depositedConstraint.C \
+coriolisAccelerationConstraint.C \
+centrifugalAccelerationConstraint.C \
+cyclicMoveConstraint.C \
+inertialDampingConstraint.C 

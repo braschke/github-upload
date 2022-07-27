@@ -1,0 +1,6 @@
+potential.C
+londonPotential.C
+lennardJonesPotential.C
+vdWPotential.C
+
+LIB = $(FOAM_USER_LIBBIN)/libLSMpotential

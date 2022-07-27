@@ -1,0 +1,20 @@
+#! /bin/bash
+
+
+wclean fvOptionsABS
+wclean LSMoptions
+wclean LSMdynamicRefineMesh
+wclean particle
+wclean potential
+wclean injector
+wclean constraint
+wclean pManager
+wclean fvPatchFields
+
+cd rapid-2.01
+make clean
+cd ..
+
+rm opencs/src/octbox/src/liboctbox.o      > /dev/null 2>&1
+rm opencs/src/octbox/src/liboctbox-64d.a  > /dev/null 2>&1
+

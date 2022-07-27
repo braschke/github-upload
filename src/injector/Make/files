@@ -1,0 +1,9 @@
+injector.C
+planeInjector.C
+staticFileInjector.C
+periodicInjector.C
+random.C
+randomDistInjector.C
+dumpParticlesInjector.C
+
+LIB = $(FOAM_USER_LIBBIN)/libLSMinjector

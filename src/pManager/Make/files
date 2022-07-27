@@ -1,0 +1,27 @@
+/* Vora
+forces/forcesFunctionObject.C
+*/
+
+pManager.C
+
+pop = population
+$(pop)/population.C
+
+bggrid = bgGrid
+$(bggrid)/bgGrid.C
+
+integration = tools/integration
+$(integration)/integration.C
+
+other = tools/other
+$(other)/write.C
+
+IOdictionary = ../tools/LSMIOdictionary
+$(IOdictionary)/LSMIOdictionary.C
+$(IOdictionary)/LSMIOdictionaryIO.C
+
+myMeshSearch = myMeshSearch
+$(myMeshSearch)/myMeshSearch.C
+
+
+LIB = $(FOAM_USER_LIBBIN)/libpManager

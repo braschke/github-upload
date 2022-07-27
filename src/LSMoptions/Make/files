@@ -1,0 +1,7 @@
+particleMomentum/particleMomentum.C
+interParticleMomentum/interParticleMomentum.C
+particleFixedValue/particleFixedValue.C
+particleZeroGradient/particleZeroGradient.C
+particleSurfaceScalarSource/particleSurfaceScalarSource.C
+
+LIB = $(FOAM_USER_LIBBIN)/libLSMoptions

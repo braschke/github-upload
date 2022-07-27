@@ -1,0 +1,4 @@
+meanVelocityForceABS/meanVelocityForceABS.C
+meanVelocityForceABS/meanVelocityForceABSIO.C
+
+LIB = $(FOAM_USER_LIBBIN)/libfvOptionsABS

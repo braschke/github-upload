@@ -1,0 +1,10 @@
+EXE_INC = \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    \
+    -I../include \
+\
+         -std=c++11 \
+    \
+    -DFOAM_VERSION=$(FULLVERSION)
+
+LIB_LIBS = 

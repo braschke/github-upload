@@ -1,0 +1,20 @@
+EXE_INC = \
+    -I$(MPI_ARCH_PATH)/include \
+	-I$(LIB_SRC)/finiteVolume/lnInclude \
+	-I$(LIB_SRC)/dynamicFvMesh/lnInclude \
+    -I$(LIB_SRC)/triSurface/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+	\
+    -I../constraint \
+	-I../tools/LSMIOdictionary   \
+	-I../include \
+	-I../contact \
+	-I../pManager \
+	-I../pManager/bgGrid \
+	-I../pManager/population \
+    -I../pManager/myMeshSearch \
+    -std=c++11 \
+    \
+    -DFOAM_VERSION=$(FULLVERSION)
+
+LIB_LIBS = 

@@ -1,0 +1,66 @@
+#! /bin/bash
+#export COMPILE_WITH_OCTBOX=0
+
+export RELEASE=`echo $WM_PROJECT_VERSION | awk -F'.' '{ print $1 }'`
+export MAJOR=`echo $WM_PROJECT_VERSION | awk -F'.' '{ print $2 }'`
+export MINOR=`echo $WM_PROJECT_VERSION | awk -F'.' '{ print $3 }'`
+
+if [ -z $MINOR ]
+then
+  export MINOR=0
+fi
+
+# Fake development version to be latest one
+if [ $MINOR == "x" ]
+then
+  export MINOR=9
+fi
+
+# Convert to number with three digits
+export FULLVERSION=$RELEASE$MAJOR$MINOR
+
+: ${COMPILE_WITH_OCTBOX:=1}
+
+if [ $COMPILE_WITH_OCTBOX -ne 0 ]
+then
+  export OPENCS_IN_ABSFOAM=$PWD/opencs
+  export OPENCS_UTLINCLUDE=$OPENCS_IN_ABSFOAM/src/utlinclude
+  export OCTBOX_SRC=$OPENCS_IN_ABSFOAM/src/octbox/src
+  export OCTBOX_LIB=$OCTBOX_SRC/liboctbox-64d.a
+  
+  if [ -f $OCTBOX_LIB ]
+  then
+    export PROVIDE_OCTBOX=1
+  else
+    echo -e "\n\nOctbox lib is not built. Please go to $OCTBOX_SRC and execute make !"
+    echo -e "Then come back to $PWD and execute 'wclean pManager; ./Allwmake' !"
+    echo -e "To compile without octbox support, 'export COMPILE_WITH_OCTBOX=0' !\n\n"
+    export PROVIDE_OCTBOX=0
+    exit;
+  fi
+else
+  export PROVIDE_OCTBOX=0
+fi
+
+if [ $PROVIDE_OCTBOX -ne 0 ]
+then
+  echo -e "\n\nCompiling with octbox support!\n\n"
+else
+  echo -e "\n\nCompiling without octbox support!\n\n"
+fi 
+
+cd rapid-2.01
+make clean
+make
+cd ..
+
+wmake fvOptionsABS
+wmake LSMoptions
+wmake LSMdynamicRefineMesh
+wmake particle
+wmake potential
+wmake injector
+wmake constraint
+wmake pManager
+wmake fvPatchFields
+

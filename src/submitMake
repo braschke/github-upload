@@ -1,0 +1,10 @@
+#!/bin/sh
+#BATCH --job-name="compileABS"
+#SBATCH --partition=short
+#SBATCH --output=%x.%j.out
+#SBATCH --error=%x.%j.err
+
+export COMPILE_WITH_OCTBOX=0
+
+./Allwmake
+

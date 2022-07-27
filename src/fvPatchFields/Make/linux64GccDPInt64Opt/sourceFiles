@@ -1,0 +1,3 @@
+SOURCE = \
+fixedSlipLength/fixedSlipLengthFvPatchFields.C \
+rotatingFlowRateInletVelocity/rotatingFlowRateInletVelocityFvPatchVectorField.C 

@@ -1,0 +1,5 @@
+SOURCE = \
+potential.C \
+londonPotential.C \
+lennardJonesPotential.C \
+vdWPotential.C 

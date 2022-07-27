@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "pManager.C": "cpp",
+        "volumetricParticle.C": "cpp",
+        "population.C": "cpp",
+        "bgGrid.C": "cpp",
+        "myMeshSearch.C": "cpp"
+    }
+}

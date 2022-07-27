@@ -1,0 +1,10 @@
+EXE_INC = \
+     -I$(MPI_ARCH_PATH)/include \
+     -I../include \
+\
+         -std=c++11 \
+    \
+    -DFOAM_VERSION=$(FULLVERSION)
+    
+LIB_LIBS = \
+    -lmpi 

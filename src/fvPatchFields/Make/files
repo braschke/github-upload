@@ -1,0 +1,4 @@
+fixedSlipLength/fixedSlipLengthFvPatchFields.C
+rotatingFlowRateInletVelocity/rotatingFlowRateInletVelocityFvPatchVectorField.C
+
+LIB = $(FOAM_USER_LIBBIN)/libLSMfvPatchFields
